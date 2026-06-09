@@ -78,3 +78,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* --- Desktop Body Background / 데스크탑 바디 배경색 --- */
+@media (min-width: 1028px) {
+  body {
+    background-color: var(--color-navy-50);
+  }
+}
