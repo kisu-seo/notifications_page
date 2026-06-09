@@ -16,10 +16,10 @@ export default function NotificationsHeader({ unreadCount, onMarkAllRead }: Prop
   }
 
   return (
-    <header className="flex items-center justify-between px-200 py-300">
+    <header className="flex items-center justify-between px-200 py-300 md:px-0 md:pt-0 md:pb-400">
       {/* --- Left: Title + Unread Badge --- */}
-      <div className="flex items-center gap-100">
-        <h1 className="text-preset-2 text-navy-950">Notifications</h1>
+      <div className="flex items-center gap-100 md:gap-200">
+        <h1 className="text-preset-2 text-navy-950 md:text-preset-1">Notifications</h1>
         {unreadCount > 0 && (
           <span
             className="bg-blue-950 text-white text-preset-4-bold rounded w-[32px] h-[25px] flex items-center justify-center"
@@ -34,7 +34,7 @@ export default function NotificationsHeader({ unreadCount, onMarkAllRead }: Prop
       <button
         type="button"
         onClick={handleMarkAllRead}
-        className="text-preset-4-medium text-gray-600 hover:text-blue-950 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950 rounded"
+        className="text-preset-4-medium text-gray-600 md:text-preset-3-medium hover:text-blue-950 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950 rounded"
       >
         Mark all as read
       </button>

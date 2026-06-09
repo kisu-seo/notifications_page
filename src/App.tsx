@@ -40,7 +40,7 @@ export default function App() {
   const unreadCount = state.notifications.filter((n) => !n.isRead).length
 
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-sans md:py-[60px] md:px-[49px]">
       <NotificationsHeader
         unreadCount={unreadCount}
         onMarkAllRead={() => dispatch({ type: 'MARK_ALL_READ' })}
