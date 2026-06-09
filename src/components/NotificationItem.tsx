@@ -6,9 +6,10 @@ import { formatTime } from '../utils/formatTime'
 interface Props {
   notification: Notification
   onMarkRead: (id: number) => void
+  className?: string
 }
 
-export default function NotificationItem({ notification, onMarkRead }: Props) {
+export default function NotificationItem({ notification, onMarkRead, className }: Props) {
   const {
     id,
     sender,
@@ -22,15 +23,24 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
     isRead,
   } = notification
 
+  const classesArray = className?.split(' ') || []
+  const hasPx = classesArray.some(cls => cls.startsWith('px-'))
+  const hasPy = classesArray.some(cls => cls.startsWith('py-'))
+
+  const pxClasses = classesArray.filter(cls => cls.startsWith('px-')).join(' ')
+  const pyClasses = classesArray.filter(cls => cls.startsWith('py-')).join(' ')
+  const liClasses = classesArray.filter(cls => !cls.startsWith('px-') && !cls.startsWith('py-')).join(' ')
+
   return (
-    <li className="px-200">
+    <li className={clsx(liClasses)}>
       <button
         type="button"
         onClick={() => onMarkRead(id)}
         aria-label={`${sender.name} ${message}${!isRead ? ', unread' : ''}`}
         className={clsx(
-          'w-full text-left flex items-start gap-200 px-200',
-          { 'py-100': !isRead, 'py-200': isRead },
+          'w-full text-left flex items-start gap-200',
+          hasPx ? pxClasses : 'px-200',
+          hasPy ? pyClasses : { 'py-100': !isRead, 'py-200': isRead },
           'hover:brightness-[0.97] transition-colors duration-150',
           'focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-blue-950',
           { 'bg-navy-50 rounded-lg': !isRead, 'bg-white': isRead }
@@ -47,19 +57,19 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
         <div className="flex-1 min-w-0">
           {/* Notification Body / 알림 본문 */}
           <p className="text-preset-4-medium text-gray-600 leading-snug">
-            <span className="text-preset-4-bold text-navy-950 inline-block mr-100">{sender.name}</span>
+            <span className="text-preset-4-bold text-navy-950 inline mr-100">{sender.name}</span>
             {' '}
             {message}
             {linkText && (
               <>
                 {' '}
-                <span className="text-preset-4-bold text-gray-600 inline-block ml-100">{linkText}</span>
+                <span className="text-preset-4-bold text-gray-600 inline ml-100">{linkText}</span>
               </>
             )}
             {groupName && (
               <>
                 {' '}
-                <span className="text-preset-4-bold text-blue-950 inline-block ml-100">{groupName}</span>
+                <span className="text-preset-4-bold text-blue-950 inline ml-100">{groupName}</span>
               </>
             )}
             {/* Unread Dot / 안읽음 표시 */}
@@ -77,7 +87,7 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
 
           {/* Private Message Preview / 메시지 미리보기 (message 타입만) */}
           {type === 'message' && privateMessage && (
-            <div className="border border-navy-100 rounded-lg px-200 py-[12px] mt-100 text-preset-4-medium text-gray-600">
+            <div className="border border-navy-100 rounded-[5px] p-200 mt-100 text-preset-4-medium text-gray-600">
               {privateMessage}
             </div>
           )}
@@ -88,7 +98,7 @@ export default function NotificationItem({ notification, onMarkRead }: Props) {
           <img
             src={thumbnail}
             alt="Commented picture"
-            className="w-10 h-10 rounded-lg object-cover shrink-0 self-center"
+            className="w-[39px] h-[39px] rounded-lg object-cover shrink-0 self-start"
           />
         )}
       </button>
