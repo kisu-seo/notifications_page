@@ -1,0 +1,80 @@
+/* === Global Styles / 전역 스타일 === */
+@import "tailwindcss";
+
+/* --- Custom Font / 커스텀 폰트 --- */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Theme Tokens (style-guide.md 기반) / 테마 토큰 --- */
+@theme {
+  /* Colors / 색상 */
+  --color-red-500: #F65552;
+  --color-blue-950: #0A327B;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-navy-50: #F7FAFD;
+  --color-blue-100: #E5EFFA;
+  --color-navy-100: #DDE7EE;
+  --color-gray-500: #939CAD;
+  --color-gray-600: #5E6778;
+  --color-navy-950: #1C202B;
+
+  /* Font / 글꼴 */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* Spacing / 간격 */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+}
+
+/* --- Text Presets / 텍스트 프리셋 --- */
+@utility text-preset-1 {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+@utility text-preset-2 {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+@utility text-preset-3-bold {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+@utility text-preset-3-medium {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+@utility text-preset-4-bold {
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+@utility text-preset-4-medium {
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+/* --- Base Reset / 기본 초기화 --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
