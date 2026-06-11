@@ -12,6 +12,9 @@
 
 /* --- Theme Tokens (style-guide.md 기반) / 테마 토큰 --- */
 @theme {
+  /* Breakpoints / 중단점 */
+  --breakpoint-desktop: 1028px;
+
   /* Colors / 색상 */
   --color-red-500: #F65552;
   --color-blue-950: #0A327B;
