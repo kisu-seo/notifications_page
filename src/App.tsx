@@ -41,7 +41,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-navy-50 min-[1028px]:flex min-[1028px]:items-center min-[1028px]:justify-center min-[1028px]:py-500">
-      <main className="w-full bg-white font-sans md:py-[60px] md:px-[49px] min-[1028px]:w-[730px] min-[1028px]:py-300 min-[1028px]:px-400 min-[1028px]:rounded-2xl min-[1028px]:shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
+      <main className="w-full bg-white font-sans md:max-desktop:py-[60px] md:max-desktop:px-[49px] min-[1028px]:w-[730px] desktop:py-300 desktop:px-400 min-[1028px]:rounded-2xl min-[1028px]:shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
         <NotificationsHeader
           unreadCount={unreadCount}
           onMarkAllRead={() => dispatch({ type: 'MARK_ALL_READ' })}
