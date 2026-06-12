@@ -34,7 +34,7 @@ export default function NotificationsHeader({ unreadCount, onMarkAllRead }: Prop
       <button
         type="button"
         onClick={handleMarkAllRead}
-        className="text-preset-4-medium text-gray-600 md:text-preset-3-medium hover:text-blue-950 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950 rounded"
+        className="text-preset-4-medium text-gray-600 desktop:text-preset-3-medium hover:text-blue-950 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950 rounded"
       >
         Mark all as read
       </button>
