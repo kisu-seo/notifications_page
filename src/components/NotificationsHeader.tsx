@@ -1,5 +1,5 @@
 /* === Header / Navigation === */
-import { useRef } from 'react'
+import { useState } from 'react'
 
 interface Props {
   unreadCount: number
@@ -7,11 +7,11 @@ interface Props {
 }
 
 export default function NotificationsHeader({ unreadCount, onMarkAllRead }: Props) {
-  // --- 초기 렌더링 시 aria-live 발화 방지 ---
-  const isMounted = useRef(false)
+  // --- Screen Reader Announcement State / 스크린 리더 알림 메시지 상태 ---
+  const [announcement, setAnnouncement] = useState('')
 
   function handleMarkAllRead() {
-    isMounted.current = true
+    setAnnouncement('All notifications marked as read')
     onMarkAllRead()
   }
 
@@ -34,14 +34,14 @@ export default function NotificationsHeader({ unreadCount, onMarkAllRead }: Prop
       <button
         type="button"
         onClick={handleMarkAllRead}
-        className="text-preset-4-medium text-gray-600 desktop:text-preset-3-medium hover:text-blue-950 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950 rounded"
+        className="text-preset-4-medium text-gray-600 desktop:text-preset-3-medium desktop-hover-text-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950 rounded"
       >
         Mark all as read
       </button>
 
       {/* --- Screen Reader Live Region / 스크린 리더 알림 영역 (인터랙션 후에만 발화) --- */}
       <div aria-live="polite" className="sr-only">
-        {isMounted.current && unreadCount === 0 ? 'All notifications marked as read' : ''}
+        {announcement}
       </div>
     </header>
   )

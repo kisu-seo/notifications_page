@@ -44,26 +44,31 @@
   line-height: 1.25;
   font-weight: 800;
 }
+
 @utility text-preset-2 {
   font-size: 20px;
   line-height: 1.25;
   font-weight: 800;
 }
+
 @utility text-preset-3-bold {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 800;
 }
+
 @utility text-preset-3-medium {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 500;
 }
+
 @utility text-preset-4-bold {
   font-size: 14px;
   line-height: 1.25;
   font-weight: 800;
 }
+
 @utility text-preset-4-medium {
   font-size: 14px;
   line-height: 1.25;
@@ -71,7 +76,9 @@
 }
 
 /* --- Base Reset / 기본 초기화 --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -86,5 +93,27 @@ body {
 @media (min-width: 1028px) {
   body {
     background-color: var(--color-navy-50);
+  }
+}
+
+/* === Desktop-Only Hover Utilities / 데스크탑 전용 호버 유틸리티 === */
+@media (hover: hover) and (min-width: 1028px) {
+  .desktop-hover-brightness:hover {
+    cursor: pointer;
+  }
+  .desktop-hover-text-navy:hover {
+    color: var(--color-blue-950) !important;
+    cursor: pointer;
+  }
+  .desktop-hover-underline:hover {
+    text-decoration: underline !important;
+    cursor: pointer;
+  }
+  .desktop-hover-bg-blue-100:hover {
+    background-color: var(--color-blue-100) !important;
+    cursor: pointer;
+  }
+  .desktop-hover-bg-blue-100 {
+    transition: background-color 150ms ease-in-out;
   }
 }

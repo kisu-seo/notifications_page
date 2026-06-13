@@ -26,7 +26,7 @@ function serveRootAssets(): Plugin {
             }
             const contentType = mimeTypes[extname(filePath).toLowerCase()] ?? 'application/octet-stream'
             res.setHeader('Content-Type', contentType)
-            createReadStream(filePath).pipe(res as any)
+            createReadStream(filePath).pipe(res)
             return
           }
         }
