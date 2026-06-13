@@ -41,5 +41,6 @@ function serveRootAssets(): Plugin {
 }
 
 export default defineConfig({
+  base: '/notifications_page/',
   plugins: [react(), tailwindcss(), serveRootAssets()],
 })
