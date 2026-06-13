@@ -58,7 +58,7 @@ export const initialNotifications: Notification[] = [
     id: 1,
     sender: {
       name: 'Mark Webber',
-      avatar: '/assets/images/avatar-mark-webber.webp',
+      avatar: 'assets/images/avatar-mark-webber.webp',
     },
     type: 'reaction',
     message: 'reacted to your recent post',
@@ -70,7 +70,7 @@ export const initialNotifications: Notification[] = [
     id: 2,
     sender: {
       name: 'Angela Gray',
-      avatar: '/assets/images/avatar-angela-gray.webp',
+      avatar: 'assets/images/avatar-angela-gray.webp',
     },
     type: 'follow',
     message: 'followed you',
@@ -81,7 +81,7 @@ export const initialNotifications: Notification[] = [
     id: 3,
     sender: {
       name: 'Jacob Thompson',
-      avatar: '/assets/images/avatar-jacob-thompson.webp',
+      avatar: 'assets/images/avatar-jacob-thompson.webp',
     },
     type: 'group_join',
     message: 'has joined your group',
@@ -93,7 +93,7 @@ export const initialNotifications: Notification[] = [
     id: 4,
     sender: {
       name: 'Rizky Hasanuddin',
-      avatar: '/assets/images/avatar-rizky-hasanuddin.webp',
+      avatar: 'assets/images/avatar-rizky-hasanuddin.webp',
     },
     type: 'message',
     message: 'sent you a private message',
@@ -106,11 +106,11 @@ export const initialNotifications: Notification[] = [
     id: 5,
     sender: {
       name: 'Kimberly Smith',
-      avatar: '/assets/images/avatar-kimberly-smith.webp',
+      avatar: 'assets/images/avatar-kimberly-smith.webp',
     },
     type: 'comment',
     message: 'commented on your picture',
-    thumbnail: '/assets/images/image-chess.webp',
+    thumbnail: 'assets/images/image-chess.webp',
     timestamp: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000), // 1 week ago
     isRead: true,
   },
@@ -118,7 +118,7 @@ export const initialNotifications: Notification[] = [
     id: 6,
     sender: {
       name: 'Nathan Peterson',
-      avatar: '/assets/images/avatar-nathan-peterson.webp',
+      avatar: 'assets/images/avatar-nathan-peterson.webp',
     },
     type: 'reaction',
     message: 'reacted to your recent post',
@@ -130,7 +130,7 @@ export const initialNotifications: Notification[] = [
     id: 7,
     sender: {
       name: 'Anna Kim',
-      avatar: '/assets/images/avatar-anna-kim.webp',
+      avatar: 'assets/images/avatar-anna-kim.webp',
     },
     type: 'group_leave',
     message: 'left the group',
