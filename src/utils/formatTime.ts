@@ -1,4 +1,4 @@
-/* === Time Formatting Util / 시간 포맷 유틸 === */
+/* === [Time Formatting Util - 시간 포맷 유틸리티] === */
 import {
   differenceInMinutes,
   differenceInHours,
@@ -7,7 +7,12 @@ import {
   differenceInMonths,
 } from 'date-fns'
 
-// --- 상대 시간 단축 포맷 (예: "1m ago", "2 weeks ago") ---
+/**
+ * @function formatTime
+ * @description 주어진 Date 객체와 현재 시간의 차이를 계산하여 상대적이고 단축된 포맷(예: "1m ago", "2 weeks ago")의 문자열로 변환하는 유틸리티 함수
+ * @param {Date} date - 비교할 대상 날짜 객체
+ * @returns {string} 상대 시간 문자열
+ */
 export function formatTime(date: Date): string {
   const now = new Date()
 

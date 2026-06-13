@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Notifications Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+### Screenshot
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Project Screenshot](./notifications_page.png)
 
-## Expanding the ESLint configuration
+### Links
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Solution URL: [Solution URL](https://github.com/kisu-seo/notifications_page)
+- Live Site URL: [Live URL](https://kisu-seo.github.io/notifications_page/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## My process
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Built with
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React 19** — Component-based architecture with clean separation of concerns. The main UI is modularized into `NotificationsHeader`, `NotificationList`, and `NotificationItem` to ensure high reusability and maintainability.
+- **TypeScript 6** — Leveraged for static typing and strict interface checking across components and utility modules.
+- **React State Management (useReducer)** — Used the `useReducer` hook to manage user notification states robustly, partitioning actions into `'MARK_READ'` and `'MARK_ALL_READ'`.
+- **Vite 8** — Utilized as the ultra-fast frontend build tool and local development server for instant Hot Module Replacement (HMR).
+- **Tailwind CSS v4** — Built with the next-generation CSS engine using `@theme` directives and custom `@utility` text presets directly in `src/index.css`, eliminating legacy config files and streamlining stylesheet code.
+- **clsx** — Integrated as a lightweight utility to dynamically combine and apply conditional Tailwind classes without complex string manipulation.
+- **date-fns v4** — Integrated as a lightweight time utility to programmatically compute and display human-readable relative durations (e.g., "1m ago", "5h ago", "2 weeks ago") relative to real-time timestamps.
+- **Semantic HTML5 & Accessibility (A11y)** — Structured with semantic tags (`<header>`, `<main>`, `<ul>`, `<li>`), accessible buttons supporting full keyboard navigation (`Tab`, `Enter`, `Space`), visually hidden screen reader labels (`<span class="sr-only">Unread</span>`), and dynamic announcement regions (`aria-live="polite"`).
+- **Responsive Card Layout & Device-Specific Hover** — Mobile-first responsive grid container with a maximum desktop width of `730px`. Includes custom media queries (`@media (hover: hover)`) targeting only pointer-enabled devices to strictly prevent sticky hovers on tablets and mobile viewports.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Author
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Website - [Kisu Seo](https://github.com/kisu-seo)
+- Frontend Mentor - [@kisu-seo](https://www.frontendmentor.io/profile/kisu-seo)

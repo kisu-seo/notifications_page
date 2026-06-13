@@ -1,11 +1,15 @@
-/* === Vite Config / Vite 설정 === */
+/* === [Vite Config / Vite 빌드 설정] === */
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { createReadStream, existsSync } from 'fs'
 import { join, extname } from 'path'
 
-// --- Plugin: 프로젝트 루트의 assets/ 폴더를 dev 서버에서 정적으로 제공 ---
+/**
+ * @function serveRootAssets
+ * @description 개발 서버(Dev Server) 작동 시, 프로젝트 루트의 assets/ 폴더 및 favicon 등의 정적 자원을 미들웨어(Middleware)를 거쳐 정적 파일로 올바르게 제공하기 위한 커스텀 Vite 플러그인
+ * @returns {Plugin} Vite 플러그인 객체
+ */
 function serveRootAssets(): Plugin {
   return {
     name: 'serve-root-assets',

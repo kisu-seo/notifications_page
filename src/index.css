@@ -1,4 +1,4 @@
-/* === Global Styles / 전역 스타일 === */
+/* === [Global Styles / 전역 스타일] === */
 @import "tailwindcss";
 
 /* --- Custom Font / 커스텀 폰트 --- */
@@ -96,7 +96,7 @@ body {
   }
 }
 
-/* === Desktop-Only Hover Utilities / 데스크탑 전용 호버 유틸리티 === */
+/* === [Desktop-Only Hover Utilities / 데스크탑 전용 호버 유틸리티] === */
 @media (hover: hover) and (min-width: 1028px) {
   .desktop-hover-brightness:hover {
     cursor: pointer;

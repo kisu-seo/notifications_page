@@ -1,6 +1,11 @@
-/* === Notification Data / 알림 데이터 === */
+/* === [Notification Data - 알림 데이터 정의] === */
 
-// --- Type Definitions / 타입 정의 ---
+/* === [Type Definitions / 타입 정의] === */
+
+/**
+ * @type NotificationType
+ * @description 알림의 발생 원인 및 종류를 명시하는 유니온(Union) 타입
+ */
 export type NotificationType =
   | 'reaction'
   | 'follow'
@@ -9,6 +14,22 @@ export type NotificationType =
   | 'comment'
   | 'group_leave';
 
+/**
+ * @interface Notification
+ * @description 개별 알림 개체가 지녀야 하는 스키마(Schema) 타입 정의
+ * @property {number} id - 알림의 고유 식별값(ID)
+ * @property {object} sender - 발신자 정보 객체
+ * @property {string} sender.name - 발신자 이름
+ * @property {string} sender.avatar - 발신자 프로필 이미지 경로
+ * @property {NotificationType} type - 알림 종류
+ * @property {string} message - 알림 설명 텍스트
+ * @property {string} [linkText] - 알림과 연동된 링크 텍스트
+ * @property {string} [groupName] - 그룹 활동 관련 알림의 경우 해당 그룹 이름
+ * @property {string} [privateMessage] - 비공개 메시지 알림의 경우 메시지 본문 미리보기
+ * @property {string} [thumbnail] - 댓글이나 첨부 파일이 있는 알림의 경우 해당 썸네일 이미지 경로
+ * @property {Date} timestamp - 알림 발생 시각 객체
+ * @property {boolean} isRead - 해당 알림의 읽음(Read)/안읽음(Unread) 상태 여부
+ */
 export interface Notification {
   id: number;
   sender: {
@@ -25,7 +46,13 @@ export interface Notification {
   isRead: boolean;
 }
 
-// --- Notification Array / 알림 배열 ---
+/* === [Notification Mock Data / 알림 모크 데이터 정의] === */
+
+/**
+ * @const initialNotifications
+ * @type {Notification[]}
+ * @description 애플리케이션의 화면 테스트 및 초기 상태 구성을 위한 알림 모크(Mock) 데이터 배열
+ */
 export const initialNotifications: Notification[] = [
   {
     id: 1,
